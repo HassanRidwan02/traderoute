@@ -4,7 +4,7 @@ import { store, CATEGORIES } from '../data/store';
 import RequestCard from '../components/RequestCard';
 
 const iconMap = {
-  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, Package
+  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, Package
 };
 
 function getCategoryIcon(iconName, size = 28) {

@@ -4,7 +4,7 @@ import { ArrowLeft, DollarSign, Package, MapPin, Calendar, Eye, Mail, MessageCir
 import { store, CATEGORIES } from '../data/store';
 
 const iconMap = {
-  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles
+  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles
 };
 
 function getCategoryIcon(iconName, size = 18) {
