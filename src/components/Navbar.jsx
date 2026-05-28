@@ -40,8 +40,14 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu */}
-        <button style={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
-          <span /><span /><span />
+        <button 
+          style={styles.hamburger} 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
+        >
+          <span style={{ width: 24, height: 2, background: 'var(--text)', borderRadius: 1, transition: 'all 0.3s', transformOrigin: 'center', transform: menuOpen ? 'rotate(45deg) translateY(10px)' : 'rotate(0)' }} />
+          <span style={{ width: 24, height: 2, background: 'var(--text)', borderRadius: 1, transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ width: 24, height: 2, background: 'var(--text)', borderRadius: 1, transition: 'all 0.3s', transformOrigin: 'center', transform: menuOpen ? 'rotate(-45deg) translateY(-10px)' : 'rotate(0)' }} />
         </button>
       </div>
 
@@ -83,6 +89,10 @@ const styles = {
     padding: '0 24px',
     height: 64,
     display: 'flex', alignItems: 'center', gap: 24,
+    '@media (max-width: 768px)': {
+      padding: '0 16px',
+      gap: 12,
+    }
   },
   logo: {
     display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0,
@@ -109,6 +119,9 @@ const styles = {
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
+    '@media (max-width: 768px)': {
+      display: 'none',
+    }
   },
   ticker: {
     display: 'flex',
@@ -123,6 +136,9 @@ const styles = {
   },
   links: {
     display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0,
+    '@media (max-width: 768px)': {
+      display: 'none',
+    }
   },
   link: {
     padding: '6px 14px',
@@ -153,18 +169,28 @@ const styles = {
     background: 'none',
     border: 'none',
     padding: 8,
+    '@media (max-width: 768px)': {
+      display: 'flex',
+    },
+    '& span': {
+      width: 24,
+      height: 2,
+      background: 'var(--text)',
+      borderRadius: 1,
+      transition: 'all 0.3s',
+    }
   },
   mobileMenu: {
     background: 'var(--bg2)',
     borderTop: '1px solid var(--border)',
-    padding: '12px 24px',
+    padding: '12px 16px',
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
   },
   mobileLink: {
     padding: '12px 0',
-    fontSize: 15,
+    fontSize: 14,
     color: 'var(--text)',
     borderBottom: '1px solid var(--border)',
   },

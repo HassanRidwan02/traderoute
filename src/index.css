@@ -85,3 +85,403 @@ input, textarea, select { font-family: var(--font-body); }
 
 /* Utility */
 .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  :root {
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  /* Hide ticker on mobile */
+  .ticker-wrap {
+    display: none !important;
+  }
+
+  /* Navbar adjustments */
+  nav {
+    height: auto !important;
+  }
+
+  .nav-inner {
+    padding: 12px 16px !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+
+  .mobile-menu {
+    display: flex !important;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 48px 16px 40px !important;
+  }
+
+  .hero-title {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-sub {
+    font-size: 14px !important;
+  }
+
+  .hero-cta {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .hero-cta a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-stats {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* Grid layouts */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cat-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Forms and inputs */
+  input, textarea, select {
+    font-size: 16px !important;
+    padding: 12px !important;
+  }
+
+  /* Cards */
+  .card {
+    padding: 16px !important;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3 {
+    font-size: 16px !important;
+  }
+
+  /* Buttons */
+  button {
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+  }
+
+  /* Modal/Modal content */
+  .sidebar {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .layout {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* Page padding */
+  .page {
+    padding: 24px 16px !important;
+  }
+
+  /* Dashboard */
+  .dash-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-direction: column !important;
+  }
+
+  .header-actions button,
+  .header-actions a {
+    width: 100%;
+  }
+
+  /* Chips/filters */
+  .chips {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* Bid cards */
+  .bid-card {
+    padding: 12px !important;
+  }
+
+  .bid-top {
+    flex-direction: column !important;
+  }
+
+  .bid-price {
+    font-size: 18px !important;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .result-count {
+    font-size: 12px !important;
+  }
+
+  .sort-wrap {
+    width: 100%;
+  }
+
+  .sort-select {
+    width: 100%;
+  }
+
+  /* Tab */
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Empty states */
+  .empty {
+    padding: 48px 16px !important;
+  }
+
+  /* Login box */
+  .login-box {
+    margin: 40px auto 0 !important;
+    padding: 24px 16px !important;
+    max-width: none !important;
+  }
+
+  /* Forms */
+  .form-card {
+    padding: 20px !important;
+  }
+
+  .form-section {
+    gap: 16px !important;
+  }
+
+  .form-nav {
+    flex-wrap: wrap !important;
+  }
+
+  .form-nav button {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  /* Step title */
+  .step-title {
+    font-size: 18px !important;
+  }
+
+  /* Top meta */
+  .top-meta {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* Main content */
+  .main {
+    min-width: 0 !important;
+  }
+
+  /* Table-like layouts */
+  .meta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .spec-grid {
+    gap: 4px !important;
+  }
+
+  .spec-row {
+    gap: 8px !important;
+    font-size: 12px !important;
+  }
+
+  /* Preview */
+  .preview {
+    padding: 12px !important;
+  }
+
+  .preview-title {
+    font-size: 12px !important;
+  }
+
+  /* Mobile padding/margin standardization */
+  .inner {
+    padding: 0 16px !important;
+  }
+
+  .section-inner {
+    padding: 0 16px !important;
+  }
+
+  .header {
+    margin-bottom: 20px !important;
+  }
+
+  .breadcrumb {
+    margin-bottom: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --radius: 6px;
+    --radius-lg: 10px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 16px !important;
+  }
+
+  h3 {
+    font-size: 14px !important;
+  }
+
+  /* More aggressive layout changes for small screens */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .steps {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cat-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)) !important;
+    gap: 6px !important;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .progress {
+    gap: 4px !important;
+  }
+
+  .progress-dot {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+
+  .form-card {
+    padding: 16px !important;
+  }
+
+  .page {
+    padding: 16px 12px !important;
+  }
+
+  .hero {
+    padding: 32px 12px 24px !important;
+  }
+
+  .hero-title {
+    font-size: 20px !important;
+  }
+
+  .hero-badge {
+    font-size: 11px !important;
+  }
+
+  .top-meta {
+    font-size: 11px !important;
+  }
+
+  .sidebar {
+    gap: 12px !important;
+  }
+
+  .card-title {
+    font-size: 11px !important;
+  }
+
+  .bid-btn {
+    width: 100% !important;
+  }
+
+  .submit-btn {
+    width: 100% !important;
+  }
+
+  button {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+
+  input, textarea, select {
+    font-size: 16px !important;
+    padding: 10px !important;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(14,12,10,0.95);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .mobile-link {
+    padding: 12px !important;
+    font-size: 13px !important;
+  }
+}
