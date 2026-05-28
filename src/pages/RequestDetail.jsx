@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, DollarSign, Package, MapPin, Calendar, Eye, Mail, MessageCircle, Phone, Clock, Link as LinkIcon, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, CheckCircle } from 'lucide-react';
+import { ArrowLeft, DollarSign, Package, MapPin, Calendar, Eye, Mail, MessageCircle, Phone, Clock, Link as LinkIcon, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, CheckCircle } from 'lucide-react';
 import { store, CATEGORIES } from '../data/store';
 
 const iconMap = {

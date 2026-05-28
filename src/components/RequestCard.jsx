@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { AlertCircle, Eye, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, Package } from 'lucide-react';
+import { AlertCircle, Eye, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, Package } from 'lucide-react';
 import { CATEGORIES } from '../data/store';
 
 const iconMap = {
-  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, Package
+  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, Package
 };
 
 function getCategoryIcon(iconName, size = 16) {

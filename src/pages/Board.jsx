@@ -1,7 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { MessageCircle, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, Package } from 'lucide-react';
 import { store, CATEGORIES, CITIES } from '../data/store';
 import RequestCard from '../components/RequestCard';
+
+const iconMap = {
+  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, Package
+};
+
+function getCategoryIcon(iconName, size = 16) {
+  const IconComponent = iconMap[iconName];
+  return IconComponent ? <IconComponent size={size} style={{ display: 'inline-block', marginRight: 4, verticalAlign: 'middle' }} /> : null;
+}
 
 export default function Board() {
   const [searchParams] = useSearchParams();
@@ -116,14 +126,16 @@ export default function Board() {
           <div style={styles.chips}>
             <Chip label="All" value="all" current={selectedCat} onChange={setSelectedCat} />
             {CATEGORIES.map(cat => (
-              <Chip key={cat.id} label={`${cat.icon} ${cat.label}`} value={cat.id} current={selectedCat} onChange={setSelectedCat} color={cat.color} />
+              <Chip key={cat.id} label={<>{getCategoryIcon(cat.icon)} {cat.label}</>} value={cat.id} current={selectedCat} onChange={setSelectedCat} color={cat.color} />
             ))}
           </div>
 
           {/* Cards */}
           {filtered.length === 0 ? (
             <div style={styles.empty}>
-              <div style={{ fontSize: 48 }}>📭</div>
+              <div style={{ fontSize: 48 }}>
+                <MessageCircle size={48} color="var(--text3)" />
+              </div>
               <p style={{ color: 'var(--text2)', marginTop: 12 }}>No requests match your filters.</p>
             </div>
           ) : (

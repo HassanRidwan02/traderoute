@@ -10,7 +10,7 @@ export const CATEGORIES = [
   { id: 'health', label: 'Health & Pharma', icon: 'Pill', color: '#e05c5c' },
   { id: 'printing', label: 'Printing & Branding', icon: 'Printer', color: '#9b59b6' },
   { id: 'logistics', label: 'Logistics & Delivery', icon: 'Truck', color: '#1abc9c' },
-  { id: 'furniture', label: 'Furniture & Décor', icon: 'Chair', color: '#e67e22' },
+  { id: 'furniture', label: 'Furniture & Décor', icon: 'Armchair', color: '#e67e22' },
   { id: 'beauty', label: 'Beauty & Cosmetics', icon: 'Sparkles', color: '#e91e8c' },
   { id: 'stationery', label: 'Stationery & Office', icon: 'Package', color: '#607d8b' },
 ];

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, Check, Clipboard, Send, AlertCircle, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, Package } from 'lucide-react';
+import { ArrowLeft, Check, Clipboard, Send, AlertCircle, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, Package } from 'lucide-react';
 import { store, CATEGORIES, CITIES } from '../data/store';
 
 const iconMap = {
-  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, Package
+  Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, Package
 };
 
 function getCategoryIcon(iconName, size = 20) {

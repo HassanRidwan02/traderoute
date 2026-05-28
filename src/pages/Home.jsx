@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Globe, Clipboard, Mail, Handshake, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Chair, Sparkles, Package, ArrowRight } from 'lucide-react';
+import { Globe, Clipboard, Mail, Handshake, Wheat, Shirt, Code, Building2, Pill, Printer, Truck, Armchair, Sparkles, Package, ArrowRight } from 'lucide-react';
 import { store, CATEGORIES } from '../data/store';
 import RequestCard from '../components/RequestCard';
 
