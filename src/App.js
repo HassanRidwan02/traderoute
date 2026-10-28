@@ -21,7 +21,7 @@ function Footer() {
       padding: '40px 24px',
       marginTop: 80,
     }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
+      <div className="footer-inner" style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
         <div>
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 18, color: 'var(--text)', marginBottom: 4 }}>
             <span style={{ background: 'var(--accent)', color: '#fff', padding: '2px 6px', borderRadius: 4, fontSize: 12, marginRight: 8 }}>TR</span>

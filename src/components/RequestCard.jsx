@@ -31,7 +31,7 @@ export default function RequestCard({ request, bidsCount = 0, animDelay = 0 }) {
   return (
     <Link to={`/request/${request.id}`} style={{ textDecoration: 'none' }}>
       <div
-        className="animate-fadeUp"
+      className="card animate-fadeUp"
         style={{
           ...styles.card,
           animationDelay: `${animDelay}ms`,
@@ -74,7 +74,7 @@ export default function RequestCard({ request, bidsCount = 0, animDelay = 0 }) {
         <p style={styles.desc}>{request.description}</p>
 
         {/* Meta grid */}
-        <div style={styles.metaGrid}>
+        <div className="meta-grid" style={styles.metaGrid}>
           <MetaItem label="Budget" value={request.budget} highlight />
           <MetaItem label="Quantity" value={request.quantity} />
           <MetaItem label="Location" value={request.location} />

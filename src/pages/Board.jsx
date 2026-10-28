@@ -57,7 +57,7 @@ export default function Board() {
   return (
     <div style={styles.page}>
       {/* Header */}
-      <div style={styles.header}>
+      <div className="header" style={styles.header}>
         <div style={styles.headerInner}>
           <h1 style={styles.title}>Procurement Board</h1>
           <p style={styles.sub}>Browse open requests from buyers across Africa. Find what matches your supply capacity and submit a bid.</p>
@@ -78,9 +78,9 @@ export default function Board() {
         </div>
       </div>
 
-      <div style={styles.body}>
+      <div className="board-body" style={styles.body}>
         {/* Sidebar filters */}
-        <aside style={styles.sidebar}>
+        <aside className="board-sidebar" style={styles.sidebar}>
           <FilterSection title="Category">
             <FilterOption label="All Categories" value="all" current={selectedCat} onChange={setSelectedCat} count={requests.length} />
             {CATEGORIES.map(cat => (
@@ -105,15 +105,15 @@ export default function Board() {
         </aside>
 
         {/* Main content */}
-        <main style={styles.main}>
+        <main className="board-main" style={styles.main}>
           {/* Toolbar */}
-          <div style={styles.toolbar}>
-            <span style={styles.resultCount}>
+          <div className="toolbar" style={styles.toolbar}>
+            <span className="result-count" style={styles.resultCount}>
               <span style={{ color: 'var(--accent)', fontWeight: 700 }}>{filtered.length}</span> requests found
             </span>
-            <div style={styles.sortWrap}>
+            <div className="sort-wrap" style={styles.sortWrap}>
               <span style={styles.sortLabel}>Sort:</span>
-              <select style={styles.sortSelect} value={sortBy} onChange={e => setSortBy(e.target.value)}>
+              <select className="sort-select" style={styles.sortSelect} value={sortBy} onChange={e => setSortBy(e.target.value)}>
                 <option value="newest">Newest First</option>
                 <option value="deadline">Deadline Soon</option>
                 <option value="budget_high">Highest Budget</option>
@@ -139,7 +139,7 @@ export default function Board() {
               <p style={{ color: 'var(--text2)', marginTop: 12 }}>No requests match your filters.</p>
             </div>
           ) : (
-            <div style={styles.grid}>
+            <div className="board-grid" style={styles.grid}>
               {filtered.map((req, i) => (
                 <RequestCard
                   key={req.id}

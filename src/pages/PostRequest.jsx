@@ -69,7 +69,7 @@ export default function PostRequest() {
   const minDate = new Date().toISOString().split('T')[0];
 
   return (
-    <div style={styles.page}>
+    <div className="page" style={styles.page}>
       <div style={styles.inner}>
         {/* Header */}
         <div style={styles.header}>
@@ -82,10 +82,10 @@ export default function PostRequest() {
         </div>
 
         {/* Progress */}
-        <div style={styles.progress}>
+        <div className="progress" style={styles.progress}>
           {[1, 2, 3].map(s => (
             <div key={s} style={styles.progressItem}>
-              <div style={{ ...styles.progressDot, background: s <= step ? 'var(--accent)' : 'var(--border)', border: `2px solid ${s <= step ? 'var(--accent)' : 'var(--border)'}` }}>
+              <div className="progress-dot" style={{ ...styles.progressDot, background: s <= step ? 'var(--accent)' : 'var(--border)', border: `2px solid ${s <= step ? 'var(--accent)' : 'var(--border)'}` }}>
                 {s < step ? <Check size={16} style={{ color: '#fff' }} /> : s}
               </div>
               <span style={{ fontSize: 12, color: s <= step ? 'var(--text)' : 'var(--text3)', marginTop: 4 }}>
@@ -97,11 +97,11 @@ export default function PostRequest() {
         </div>
 
         {/* Form card */}
-        <div style={styles.formCard}>
+        <div className="form-card" style={styles.formCard}>
           {/* Step 1 */}
           {step === 1 && (
-            <div style={styles.formSection}>
-              <h2 style={styles.stepTitle}>What are you looking for?</h2>
+            <div className="form-section" style={styles.formSection}>
+              <h2 className="step-title" style={styles.stepTitle}>What are you looking for?</h2>
 
               <FormField label="Request Title *" error={errors.title}>
                 <input
@@ -148,10 +148,10 @@ export default function PostRequest() {
 
           {/* Step 2 */}
           {step === 2 && (
-            <div style={styles.formSection}>
-              <h2 style={styles.stepTitle}>Budget, Quantity & Timeline</h2>
+            <div className="form-section" style={styles.formSection}>
+              <h2 className="step-title" style={styles.stepTitle}>Budget, Quantity & Timeline</h2>
 
-              <div style={styles.twoCol}>
+              <div className="two-col" style={styles.twoCol}>
                 <FormField label="Total Budget *" error={errors.budget} hint="Your maximum spend for this request.">
                   <input
                     style={inputStyle(errors.budget)}
@@ -170,7 +170,7 @@ export default function PostRequest() {
                 </FormField>
               </div>
 
-              <div style={styles.twoCol}>
+              <div className="two-col" style={styles.twoCol}>
                 <FormField label="Delivery Location *" error={errors.location}>
                   <select style={inputStyle(errors.location)} value={form.location} onChange={e => set('location')(e.target.value)}>
                     <option value="">Select city...</option>
@@ -192,8 +192,8 @@ export default function PostRequest() {
 
           {/* Step 3 */}
           {step === 3 && (
-            <div style={styles.formSection}>
-              <h2 style={styles.stepTitle}>Your Contact Details</h2>
+            <div className="form-section" style={styles.formSection}>
+              <h2 className="step-title" style={styles.stepTitle}>Your Contact Details</h2>
               <p style={styles.stepSub}>Vendors will use these to reach you. Your phone is shown to vendors only after you engage with their bid.</p>
 
               <FormField label="Business / Your Name *" error={errors.buyerName}>
@@ -215,8 +215,8 @@ export default function PostRequest() {
               </FormField>
 
               {/* Preview */}
-              <div style={styles.preview}>
-                <h3 style={styles.previewTitle}>
+              <div className="preview" style={styles.preview}>
+                <h3 className="preview-title" style={styles.previewTitle}>
                   <Clipboard size={16} style={{ display: 'inline-block', marginRight: 6, verticalAlign: 'middle' }} />
                   Request Summary
                 </h3>
@@ -233,7 +233,7 @@ export default function PostRequest() {
           )}
 
           {/* Nav buttons */}
-          <div style={styles.formNav}>
+          <div className="form-nav" style={styles.formNav}>
             {step > 1 && (
               <button style={styles.backBtn} onClick={() => setStep(step - 1)}>
                 <ArrowLeft size={16} style={{ display: 'inline-block', marginRight: 6, verticalAlign: 'middle' }} />

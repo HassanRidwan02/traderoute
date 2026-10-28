@@ -60,7 +60,7 @@ export default function RequestDetail() {
   };
 
   return (
-    <div style={styles.page}>
+    <div className="detail-page" style={styles.page}>
       <div style={styles.inner}>
         {/* Breadcrumb */}
         <div style={styles.breadcrumb}>
@@ -70,11 +70,11 @@ export default function RequestDetail() {
           </Link>
         </div>
 
-        <div style={styles.layout}>
+        <div className="detail-layout" style={styles.layout}>
           {/* Left: Main content */}
-          <div style={styles.main}>
+          <div className="detail-main" style={styles.main}>
             {/* Category + Status */}
-            <div style={styles.topMeta}>
+            <div className="top-meta" style={styles.topMeta}>
               <span style={{ ...styles.catBadge, background: cat.color + '22', color: cat.color, border: `1px solid ${cat.color}44` }}>
                 {getCategoryIcon(cat.icon)} {cat.label}
               </span>
@@ -88,12 +88,12 @@ export default function RequestDetail() {
 
             <h1 style={styles.title}>{request.title}</h1>
 
-            <p style={styles.description}>{request.description}</p>
+            <p className="description" style={styles.description}>{request.description}</p>
 
             {/* Specs */}
-            <div style={styles.specBox}>
+            <div className="spec-box" style={styles.specBox}>
               <h3 style={styles.specTitle}>Request Specifications</h3>
-              <div style={styles.specGrid}>
+              <div className="spec-grid" style={styles.specGrid}>
                 <SpecRow icon={<DollarSign size={16} />} label="Budget" value={request.budget} highlight />
                 <SpecRow icon={<Package size={16} />} label="Quantity" value={request.quantity} />
                 <SpecRow icon={<MapPin size={16} />} label="Location" value={request.location} />
@@ -126,8 +126,8 @@ export default function RequestDetail() {
               ) : (
                 <div style={styles.bidsList}>
                   {bids.map((bid, i) => (
-                    <div key={bid.id} style={styles.bidCard} className="animate-fadeUp" style={{ ...styles.bidCard, animationDelay: `${i * 80}ms`, opacity: 0 }}>
-                      <div style={styles.bidTop}>
+                    <div key={bid.id} className="bid-card animate-fadeUp" style={{ ...styles.bidCard, animationDelay: `${i * 80}ms`, opacity: 0 }}>
+                      <div className="bid-top" style={styles.bidTop}>
                         <div style={styles.bidVendor}>
                           <div style={styles.bidAvatar}>{bid.vendorName[0]}</div>
                           <div>
@@ -144,7 +144,7 @@ export default function RequestDetail() {
                             </div>
                           </div>
                         </div>
-                        <div style={styles.bidPrice}>{bid.price}</div>
+                        <div className="bid-price" style={styles.bidPrice}>{bid.price}</div>
                       </div>
                       <p style={styles.bidMessage}>{bid.message}</p>
                     </div>
@@ -155,10 +155,10 @@ export default function RequestDetail() {
           </div>
 
           {/* Right: Buyer info + Bid CTA */}
-          <aside style={styles.sidebar}>
+          <aside className="detail-sidebar" style={styles.sidebar}>
             {/* Buyer card */}
-            <div style={styles.buyerCard}>
-              <h3 style={styles.cardTitle}>Posted By</h3>
+            <div className="buyer-card" style={styles.buyerCard}>
+              <h3 className="card-title" style={styles.cardTitle}>Posted By</h3>
               <div style={styles.buyerInfo}>
                 <div style={styles.buyerAvatar}>{request.buyerName[0]}</div>
                 <div>
@@ -177,10 +177,10 @@ export default function RequestDetail() {
 
             {/* Bid CTA */}
             {!isExpired && (
-              <div style={styles.bidCtaCard}>
+              <div className="bid-cta-card" style={styles.bidCtaCard}>
                 <h3 style={styles.cardTitle}>Interested in this request?</h3>
                 <p style={styles.bidCtaSub}>Submit your best offer and price to win this contract.</p>
-                <button style={styles.bidBtn} onClick={() => setShowBidForm(!showBidForm)}>
+                <button className="bid-btn" style={styles.bidBtn} onClick={() => setShowBidForm(!showBidForm)}>
                   {showBidForm ? 'Cancel' : <>
                     <Mail size={16} style={{ display: 'inline-block', marginRight: 6, verticalAlign: 'middle' }} />
                     Submit a Bid
@@ -195,7 +195,7 @@ export default function RequestDetail() {
                     <Input label="Your Location" value={bidData.location} onChange={v => setBidData(p => ({ ...p, location: v }))} placeholder="e.g. Lagos" />
                     <Input label="Your Price / Offer *" value={bidData.price} onChange={v => setBidData(p => ({ ...p, price: v }))} placeholder="e.g. ₦320,000" />
                     <TextArea label="Your Pitch *" value={bidData.message} onChange={v => setBidData(p => ({ ...p, message: v }))} placeholder="Describe what makes your offer the best. Mention experience, delivery timeline, quality guarantees..." />
-                    <button style={styles.submitBtn} onClick={handleBid}>
+                    <button className="submit-btn" style={styles.submitBtn} onClick={handleBid}>
                       Submit Bid
                       <LinkIcon size={14} style={{ display: 'inline-block', marginLeft: 6, verticalAlign: 'middle', transform: 'rotate(-45deg)' }} />
                     </button>
@@ -218,7 +218,7 @@ export default function RequestDetail() {
             )}
 
             {/* Share */}
-            <div style={styles.shareCard}>
+            <div className="share-card" style={styles.shareCard}>
               <h3 style={styles.cardTitle}>Know a vendor?</h3>
               <p style={{ fontSize: 13, color: 'var(--text2)', marginBottom: 12, lineHeight: 1.6 }}>Share this request with suppliers who can fulfil it.</p>
               <button style={styles.shareBtn} onClick={() => {
@@ -238,7 +238,7 @@ export default function RequestDetail() {
 
 function SpecRow({ icon, label, value, highlight, urgent }) {
   return (
-    <div style={specStyles.row}>
+    <div className="spec-row" style={specStyles.row}>
       <span style={{ ...specStyles.icon, color: 'var(--text3)' }}>
         {typeof icon === 'string' ? icon : icon}
       </span>

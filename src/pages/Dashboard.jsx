@@ -41,12 +41,12 @@ export default function Dashboard() {
 
   if (!user) {
     return (
-      <div style={styles.page}>
-        <div style={styles.loginBox}>
+      <div className="page" style={styles.page}>
+        <div className="login-box" style={styles.loginBox}>
           <div style={styles.loginIcon}>
             <User size={48} color="var(--accent)" />
           </div>
-          <h1 style={styles.loginTitle}>Your Dashboard</h1>
+          <h1 className="login-title" style={styles.loginTitle}>Your Dashboard</h1>
           <p style={styles.loginSub}>Enter your name and phone number to access your requests and bids. This is linked to your phone number.</p>
           {loginError && <div style={styles.loginError}>{loginError}</div>}
           <div style={styles.loginForm}>
@@ -61,10 +61,10 @@ export default function Dashboard() {
   }
 
   return (
-    <div style={styles.page}>
-      <div style={styles.inner}>
+    <div className="page" style={styles.page}>
+      <div className="dashboard-inner" style={styles.inner}>
         {/* Header */}
-        <div style={styles.dashHeader}>
+        <div className="dash-header" style={styles.dashHeader}>
           <div>
             <h1 style={styles.title}>
               Welcome back, {user.name.split(' ')[0]}
@@ -72,14 +72,14 @@ export default function Dashboard() {
             </h1>
             <p style={styles.sub}>Manage your requests and bids</p>
           </div>
-          <div style={styles.headerActions}>
+          <div className="header-actions" style={styles.headerActions}>
             <Link to="/post" style={styles.postBtn}>+ New Request</Link>
             <button style={styles.logoutBtn} onClick={handleLogout}>Sign Out</button>
           </div>
         </div>
 
         {/* Stats */}
-        <div style={styles.statsRow}>
+        <div className="stats-row" style={styles.statsRow}>
           <StatBox value={myRequests.length} label="Your Requests" color="var(--accent)" />
           <StatBox value={myBids.length} label="Bids You Placed" color="var(--blue)" />
           <StatBox value={myRequests.reduce((a, r) => a + (bids.filter(b => b.requestId === r.id).length), 0)} label="Bids Received" color="var(--green)" />
@@ -87,7 +87,7 @@ export default function Dashboard() {
         </div>
 
         {/* Tabs */}
-        <div style={styles.tabs}>
+        <div className="tabs" style={styles.tabs}>
           <Tab label={`My Requests (${myRequests.length})`} active={tab === 'requests'} onClick={() => setTab('requests')} />
           <Tab label={`My Bids (${myBids.length})`} active={tab === 'bids'} onClick={() => setTab('bids')} />
         </div>
@@ -104,11 +104,11 @@ export default function Dashboard() {
                 link="/post"
               />
             ) : (
-              <div style={styles.grid}>
+              <div className="dashboard-grid" style={styles.grid}>
                 {myRequests.map((req, i) => (
                   <div key={req.id}>
                     <RequestCard request={req} bidsCount={bids.filter(b => b.requestId === req.id).length} animDelay={i * 80} />
-                    <div style={styles.bidsSummary}>
+                    <div className="bids-summary" style={styles.bidsSummary}>
                       <span style={{ fontSize: 12, color: 'var(--text3)' }}>
                         {bids.filter(b => b.requestId === req.id).length} bids received
                       </span>
@@ -146,7 +146,7 @@ export default function Dashboard() {
                         <div style={styles.myBidPrice}>{bid.price}</div>
                       </div>
                       <p style={styles.myBidMsg}>{bid.message}</p>
-                      <div style={styles.myBidFooter}>
+                      <div className="my-bid-footer" style={styles.myBidFooter}>
                         <span style={{ fontSize: 12, color: 'var(--text3)' }}>
                           <MapPin size={14} style={{ display: 'inline-block', marginRight: 4, verticalAlign: 'middle' }} />
                           {bid.location || 'N/A'}

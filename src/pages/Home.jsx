@@ -26,29 +26,29 @@ export default function Home() {
   return (
     <div style={styles.page}>
       {/* Hero */}
-      <section style={styles.hero}>
+      <section className="hero" style={styles.hero}>
         <div style={styles.heroBg} />
         <div style={styles.heroInner}>
           <div style={styles.heroBadge}>
             <Globe size={16} style={{ display: 'inline-block', marginRight: 6, verticalAlign: 'middle' }} />
             Africa's B2B Procurement Network
           </div>
-          <h1 style={styles.heroTitle}>
+          <h1 className="hero-title" style={styles.heroTitle}>
             Tell us what<br />
             <span style={styles.heroAccent}>you need.</span><br />
             Vendors compete.
           </h1>
-          <p style={styles.heroSub}>
+          <p className="hero-sub" style={styles.heroSub}>
             Post your procurement request in 60 seconds. Get competitive bids from verified vendors across Nigeria and Africa. No middlemen. No markup. Just direct deals.
           </p>
-          <div style={styles.heroCta}>
+          <div className="hero-cta" style={styles.heroCta}>
             <Link to="/post" style={styles.ctaPrimary}>
               Post a Request
               <ArrowRight size={16} style={{ display: 'inline-block', marginLeft: 6, verticalAlign: 'middle' }} />
             </Link>
             <Link to="/board" style={styles.ctaSecondary}>Browse Open Requests</Link>
           </div>
-          <div style={styles.heroStats}>
+          <div className="hero-stats" style={styles.heroStats}>
             <Stat value={`${stats.requests}+`} label="Open Requests" />
             <StatDivider />
             <Stat value={`${stats.bids}+`} label="Bids Placed" />
@@ -61,13 +61,13 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section style={styles.section}>
+      <section className="section" style={styles.section}>
         <div style={styles.sectionInner}>
           <div style={styles.sectionHeader}>
             <span style={styles.sectionTag}>How It Works</span>
             <h2 style={styles.sectionTitle}>Three steps to your best deal</h2>
           </div>
-          <div style={styles.steps}>
+          <div className="steps" style={styles.steps}>
             {[
               { num: '01', icon: <Clipboard size={32} />, title: 'Post Your Request', desc: 'Describe what you need, your budget, quantity, location, and deadline. Takes under a minute.' },
               { num: '02', icon: <Mail size={32} />, title: 'Receive Bids', desc: 'Verified vendors across Africa see your request and send competitive offers directly to you.' },
@@ -87,13 +87,13 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section style={{ ...styles.section, background: 'var(--bg2)' }}>
+      <section className="section" style={{ ...styles.section, background: 'var(--bg2)' }}>
         <div style={styles.sectionInner}>
           <div style={styles.sectionHeader}>
             <span style={styles.sectionTag}>Categories</span>
             <h2 style={styles.sectionTitle}>Every industry. One platform.</h2>
           </div>
-          <div style={styles.catGrid}>
+          <div className="cat-grid" style={styles.catGrid}>
             {CATEGORIES.map((cat) => (
               <Link to={`/board?cat=${cat.id}`} key={cat.id} style={styles.catCard}
                 onMouseEnter={e => e.currentTarget.style.borderColor = cat.color + '88'}
@@ -108,7 +108,7 @@ export default function Home() {
       </section>
 
       {/* Recent requests */}
-      <section style={styles.section}>
+      <section className="section" style={styles.section}>
         <div style={styles.sectionInner}>
           <div style={{ ...styles.sectionHeader, ...styles.sectionHeaderRow }}>
             <div>
@@ -120,7 +120,7 @@ export default function Home() {
               <ArrowRight size={16} style={{ display: 'inline-block', marginLeft: 6, verticalAlign: 'middle' }} />
             </Link>
           </div>
-          <div style={styles.cardsGrid}>
+          <div className="cards-grid" style={styles.cardsGrid}>
             {requests.map((req, i) => (
               <RequestCard key={req.id} request={req} bidsCount={bids.filter(b => b.requestId === req.id).length} animDelay={i * 100} />
             ))}
@@ -129,7 +129,7 @@ export default function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section style={styles.ctaBanner}>
+      <section className="ctaBanner" style={styles.ctaBanner}>
         <div style={styles.ctaBannerInner}>
           <h2 style={styles.ctaBannerTitle}>Are you a vendor?</h2>
           <p style={styles.ctaBannerSub}>Browse hundreds of open procurement requests and win new clients today.</p>

@@ -13,15 +13,15 @@ export default function Navbar() {
 
   return (
     <nav style={styles.nav}>
-      <div style={styles.inner}>
+      <div className="nav-inner" style={styles.inner}>
         {/* Logo */}
         <Link to="/" style={styles.logo}>
           <span style={styles.logoMark}>TR</span>
-          <span style={styles.logoText}>TradeRoute</span>
+          <span className="logo-text" style={styles.logoText}>TradeRoute</span>
         </Link>
 
         {/* Ticker */}
-        <div style={styles.tickerWrap}>
+        <div className="ticker-wrap" style={styles.tickerWrap}>
           <div style={styles.ticker}>
             {['Food & Agro', 'Fashion', 'Tech', 'Construction', 'Health', 'Logistics', 'Printing', 'Food & Agro', 'Fashion', 'Tech', 'Construction', 'Health', 'Logistics', 'Printing'].map((t, i) => (
               <span key={i} style={styles.tickerItem}>{t}</span>
@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
 
         {/* Links */}
-        <div style={styles.links}>
+        <div className="nav-links" style={styles.links}>
           <Link to="/board" style={{ ...styles.link, ...(isActive('/board') ? styles.linkActive : {}) }}>Board</Link>
           <Link to="/post" style={styles.postBtn}>+ Post Request</Link>
           {user
@@ -40,7 +40,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile menu */}
-        <button 
+        <button className="hamburger"
           style={styles.hamburger} 
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
@@ -52,7 +52,7 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div style={styles.mobileMenu}>
+        <div className="mobile-menu" style={styles.mobileMenu}>
           <Link to="/board" style={styles.mobileLink} onClick={() => setMenuOpen(false)}>
             <Clipboard size={18} style={{ display: 'inline-block', marginRight: 8, verticalAlign: 'middle' }} />
             Browse Board
